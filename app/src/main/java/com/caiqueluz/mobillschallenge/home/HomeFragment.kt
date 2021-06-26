@@ -1,4 +1,4 @@
-package com.caiqueluz.mobillschallenge
+package com.caiqueluz.mobillschallenge.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

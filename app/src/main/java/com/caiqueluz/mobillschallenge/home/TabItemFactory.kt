@@ -1,6 +1,9 @@
-package com.caiqueluz.mobillschallenge
+package com.caiqueluz.mobillschallenge.home
 
 import android.content.res.Resources
+import com.caiqueluz.mobillschallenge.FirstFragment
+import com.caiqueluz.mobillschallenge.R
+import com.caiqueluz.mobillschallenge.SecondFragment
 
 class TabItemFactory(
     private val resources: Resources

@@ -1,4 +1,4 @@
-package com.caiqueluz.mobillschallenge
+package com.caiqueluz.mobillschallenge.home
 
 import androidx.fragment.app.Fragment
 

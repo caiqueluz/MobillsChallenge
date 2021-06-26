@@ -1,17 +1,18 @@
-package com.caiqueluz.mobillschallenge
+package com.caiqueluz.mobillschallenge.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.caiqueluz.mobillschallenge.databinding.ActivityAppBinding
+import com.caiqueluz.mobillschallenge.databinding.ActivityHomeBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import org.koin.android.ext.android.inject
 
-class AppActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
-    private val tabItemFactory = TabItemFactory()
+    private val tabItemFactory by inject<TabItemFactory>()
 
     private val binding by lazy {
-        ActivityAppBinding.inflate(layoutInflater)
+        ActivityHomeBinding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
