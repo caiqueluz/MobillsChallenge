@@ -42,7 +42,7 @@ android {
     }
     sourceSets {
         String sharedDir = "src/sharedTest/java"
-        String sharedResources = "src/sharedTest/assets"
+        String sharedResources = "src/sharedTest/resources"
 
         test {
             java.srcDir sharedDir
