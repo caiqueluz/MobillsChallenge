@@ -25,7 +25,6 @@ class AppActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupToolbar()
-        setupButton()
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -38,11 +37,5 @@ class AppActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-    }
-
-    private fun setupButton() {
-        binding.button.setOnClickListener {
-            // Add dialog here
-        }
     }
 }
