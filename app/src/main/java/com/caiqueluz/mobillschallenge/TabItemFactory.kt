@@ -1,10 +1,14 @@
 package com.caiqueluz.mobillschallenge
 
-class TabItemFactory {
+import android.content.res.Resources
+
+class TabItemFactory(
+    private val resources: Resources
+) {
 
     fun createItems(): List<TabItemVO> = listOf(
-        TabItemVO("Início", HomeFragment()),
-        TabItemVO("Despesas", FirstFragment()),
-        TabItemVO("Receitas", SecondFragment())
+        TabItemVO(resources.getString(R.string.tab_item_home), HomeFragment()),
+        TabItemVO(resources.getString(R.string.tab_item_expenses), FirstFragment()),
+        TabItemVO(resources.getString(R.string.tab_item_revenue), SecondFragment())
     )
 }
