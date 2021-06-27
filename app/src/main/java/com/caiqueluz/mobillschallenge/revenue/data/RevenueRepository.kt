@@ -1,4 +1,4 @@
-package com.caiqueluz.mobillschallenge.revenue
+package com.caiqueluz.mobillschallenge.revenue.data
 
 interface RevenueRepository {
 

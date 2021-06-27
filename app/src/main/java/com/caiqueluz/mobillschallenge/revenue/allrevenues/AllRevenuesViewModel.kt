@@ -1,10 +1,11 @@
-package com.caiqueluz.mobillschallenge.revenue
+package com.caiqueluz.mobillschallenge.revenue.allrevenues
 
 import android.content.Intent
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.caiqueluz.mobillschallenge.IntentFactory
+import com.caiqueluz.mobillschallenge.revenue.main.RevenueFlow
 
 class AllRevenuesViewModel(
     private val intentFactory: IntentFactory

@@ -1,16 +1,16 @@
-package com.caiqueluz.mobillschallenge
+package com.caiqueluz.mobillschallenge.expense
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.caiqueluz.mobillschallenge.databinding.FragmentFirstBinding
+import com.caiqueluz.mobillschallenge.databinding.FragmentExpenseBinding
 
-class FirstFragment : Fragment() {
+class ExpenseFragment : Fragment() {
 
     private val binding by lazy {
-        FragmentFirstBinding.inflate(layoutInflater)
+        FragmentExpenseBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
@@ -20,5 +20,13 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        setupAddButton()
+    }
+
+    private fun setupAddButton() {
+        binding.addButton.setOnClickListener {
+            //
+        }
     }
 }

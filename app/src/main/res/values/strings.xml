@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">MobillsChallenge</string>
 
-    <string name="tab_item_home">Início</string>
+    <string name="tab_item_home">Geral</string>
     <string name="tab_item_expenses">Despesas</string>
     <string name="tab_item_revenue">Receitas</string>
+    <string name="add_revenue_title">Adicionar receita</string>
+    <string name="add_revenue_value_hint">Valor em R$</string>
+    <string name="add_revenue_description_hint">Descrição</string>
 </resources>

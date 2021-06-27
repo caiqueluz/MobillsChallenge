@@ -1,9 +1,20 @@
 package com.caiqueluz.mobillschallenge
 
 import android.app.Activity
+import androidx.annotation.IdRes
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+
+fun AppCompatActivity.enableToolbarBackButton(toolbar: Toolbar) {
+    setSupportActionBar(toolbar)
+
+    supportActionBar?.setDisplayShowHomeEnabled(true)
+    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+}
 
 inline fun <reified VALUE> Activity.extra(key: String): VALUE =
     intent.extras?.get(key) as VALUE ?: throw IllegalStateException(
@@ -16,9 +27,7 @@ inline fun <reified VALUE> Activity.extra(key: String): VALUE =
  * FragmentContainerView navigation bug. See this: https://stackoverflow.com/a/59275182
  *
  */
-private fun FragmentActivity.findFragmentViewNavController(): NavController {
-    val navHostFragment = supportFragmentManager
-        .findFragmentById(R.id.revenue_navigation_container) as NavHostFragment
-
-    return navHostFragment.navController
+fun FragmentActivity.findFragmentViewNavController(@IdRes containerId: Int): NavController {
+    val navHostFragment = supportFragmentManager.findFragmentById(containerId) as NavHostFragment
+    return navHostFragment.findNavController()
 }

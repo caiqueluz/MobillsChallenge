@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.caiqueluz.mobillschallenge.databinding.FragmentAddRevenueBinding
+import com.caiqueluz.mobillschallenge.showKeyboard
 
 class AddRevenueFragment : Fragment() {
 
@@ -21,5 +22,7 @@ class AddRevenueFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.descriptionEditText.showKeyboard()
     }
 }

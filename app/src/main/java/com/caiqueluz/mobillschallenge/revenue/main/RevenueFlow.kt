@@ -1,4 +1,4 @@
-package com.caiqueluz.mobillschallenge.revenue
+package com.caiqueluz.mobillschallenge.revenue.main
 
 import com.caiqueluz.mobillschallenge.revenue.data.Revenue
 import java.io.Serializable

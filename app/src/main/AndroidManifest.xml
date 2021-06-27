@@ -14,7 +14,6 @@
 
         <activity
             android:name=".home.HomeActivity"
-            android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MobillsChallenge.NoActionBar"
             tools:ignore="LockedOrientationActivity">
@@ -22,6 +21,18 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".revenue.main.RevenueActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MobillsChallenge.NoActionBar"
+            tools:ignore="LockedOrientationActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

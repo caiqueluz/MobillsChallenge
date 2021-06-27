@@ -3,8 +3,8 @@ package com.caiqueluz.mobillschallenge.home
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.caiqueluz.mobillschallenge.FirstFragment
-import com.caiqueluz.mobillschallenge.SecondFragment
+import com.caiqueluz.mobillschallenge.expense.ExpenseFragment
+import com.caiqueluz.mobillschallenge.revenue.allrevenues.AllRevenuesFragment
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -19,7 +19,7 @@ class TabItemFactoryTest {
 
     @Test
     fun whenCreateItemsIsCalled_verifyFirstItemTabNameIsCorrect() {
-        val expected = "Início"
+        val expected = "Geral"
         val actual = items[0].name
 
         assertEquals(expected, actual)
@@ -43,7 +43,7 @@ class TabItemFactoryTest {
 
     @Test
     fun whenCreateItemsIsCalled_verifySecondItemTabFragmentIsCorrect() {
-        val expected = FirstFragment::class.java
+        val expected = ExpenseFragment::class.java
         val actual = items[1].fragment::class.java
 
         assertEquals(expected, actual)
@@ -59,7 +59,7 @@ class TabItemFactoryTest {
 
     @Test
     fun whenCreateItemsIsCalled_verifyThirdItemTabFragmentIsCorrect() {
-        val expected = SecondFragment::class.java
+        val expected = AllRevenuesFragment::class.java
         val actual = items[2].fragment::class.java
 
         assertEquals(expected, actual)
