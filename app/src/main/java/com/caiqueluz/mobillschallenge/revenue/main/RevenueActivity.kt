@@ -29,6 +29,7 @@ class RevenueActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
 
+        binding.root.closeKeyboard()
         finish()
     }
 

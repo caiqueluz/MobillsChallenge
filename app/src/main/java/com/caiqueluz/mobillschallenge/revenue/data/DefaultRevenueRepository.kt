@@ -24,4 +24,14 @@ class DefaultRevenueRepository : RevenueRepository {
 
         return cache
     }
+
+    override suspend fun delete(description: String) {
+        delay(500L)
+    }
+
+    override suspend fun deleteAll() {
+        delay(500L)
+
+        cache.clear()
+    }
 }

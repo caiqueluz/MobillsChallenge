@@ -1,5 +1,6 @@
 package com.caiqueluz.mobillschallenge.revenue.di
 
+import com.caiqueluz.mobillschallenge.revenue.addrevenue.AddRevenueViewModel
 import com.caiqueluz.mobillschallenge.revenue.allrevenues.AllRevenuesViewModel
 import com.caiqueluz.mobillschallenge.revenue.data.DefaultRevenueRepository
 import com.caiqueluz.mobillschallenge.revenue.data.RevenueRepository
@@ -19,5 +20,9 @@ val revenueModule = module {
 
     viewModel {
         AllRevenuesViewModel(get())
+    }
+
+    viewModel {
+        AddRevenueViewModel(get())
     }
 }

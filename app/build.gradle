@@ -80,6 +80,8 @@ dependencies {
     implementation Dependencies.Library.KOIN_VIEW_MODEL
     implementation Dependencies.Library.KOIN_FRAGMENT
 
+    implementation "br.com.concrete:canarinho:2.0.0"
+
     testImplementation Dependencies.Test.JUNIT
     testImplementation Dependencies.Test.EXT_JUNIT
     testImplementation Dependencies.Test.MOCKITO_CORE

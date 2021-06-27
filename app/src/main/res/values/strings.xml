@@ -7,4 +7,5 @@
     <string name="add_revenue_title">Adicionar receita</string>
     <string name="add_revenue_value_hint">Valor em R$</string>
     <string name="add_revenue_description_hint">Descrição</string>
+    <string name="add_revenue_button">Adicionar</string>
 </resources>

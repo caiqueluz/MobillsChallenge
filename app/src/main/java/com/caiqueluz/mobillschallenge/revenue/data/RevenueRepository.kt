@@ -7,4 +7,8 @@ interface RevenueRepository {
     suspend fun get(description: String): Revenue
 
     suspend fun getAll(): List<Revenue>
+
+    suspend fun delete(description: String)
+
+    suspend fun deleteAll()
 }
