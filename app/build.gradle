@@ -68,6 +68,8 @@ dependencies {
     implementation Dependencies.Library.Android.ARCH_CORE_COMMON
     implementation Dependencies.Library.Android.ARCH_CORE_RUNTIME
     implementation Dependencies.Library.Android.FRAGMENT_KTX
+    implementation Dependencies.Library.Android.NAVIGATION_KTX
+    implementation Dependencies.Library.Android.NAVIGATION_UI_KTX
     implementation Dependencies.Library.Android.VIEW_PAGER_2
     implementation Dependencies.Library.Android.LIFECYCLE_VIEW_MODEL
     implementation Dependencies.Library.Android.LIFECYCLE_LIVE_DATA

@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.caiqueluz.mobillschallenge.databinding.ActivityHomeBinding
 import com.google.android.material.tabs.TabLayoutMediator
-import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeActivity : AppCompatActivity() {
 
-    private val tabItemFactory by inject<TabItemFactory>()
+    private val viewModel by viewModel<HomeViewModel>()
 
     private val binding by lazy {
         ActivityHomeBinding.inflate(layoutInflater)
@@ -19,10 +19,14 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val tabItems = tabItemFactory.createItems()
+        setupObserver()
+    }
 
-        setupViewPager(fragments = tabItems.map { it.fragment })
-        setupTabLayout(names = tabItems.map { it.name })
+    private fun setupObserver() {
+        viewModel.tabItems.observe(this) { tabItems ->
+            setupViewPager(tabItems.map { it.fragment })
+            setupTabLayout(tabItems.map { it.name })
+        }
     }
 
     private fun setupTabLayout(names: List<String>) {

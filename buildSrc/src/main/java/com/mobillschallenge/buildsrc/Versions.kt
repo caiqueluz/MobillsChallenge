@@ -15,6 +15,7 @@ object Versions {
 
             const val LIFECYCLE = "2.3.0"
             const val KTX = "1.3.2"
+            const val NAVIGATION_KTX = "2.3.5"
             const val ARCH = "2.1.0"
 
             const val MATERIAL = "1.3.0"

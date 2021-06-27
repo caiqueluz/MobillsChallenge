@@ -22,6 +22,8 @@ object Dependencies {
 
             const val CORE_KTX = "androidx.core:core-ktx:${Versions.Library.Android.KTX}"
             const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:${Versions.Library.Android.KTX}"
+            const val NAVIGATION_KTX = "androidx.navigation:navigation-fragment-ktx:${Versions.Library.Android.NAVIGATION_KTX}"
+            const val NAVIGATION_UI_KTX = "androidx.navigation:navigation-ui-ktx:${Versions.Library.Android.NAVIGATION_KTX}"
 
             const val ARCH_CORE_COMMON = "androidx.arch.core:core-common:${Versions.Library.Android.ARCH}"
             const val ARCH_CORE_RUNTIME = "androidx.arch.core:core-runtime:${Versions.Library.Android.ARCH}"

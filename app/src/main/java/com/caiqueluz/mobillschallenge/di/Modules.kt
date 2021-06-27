@@ -1,20 +1,24 @@
 package com.caiqueluz.mobillschallenge.di
 
-import com.caiqueluz.mobillschallenge.home.TabItemFactory
+import com.caiqueluz.mobillschallenge.IntentFactory
+import com.caiqueluz.mobillschallenge.home.di.homeModule
+import com.caiqueluz.mobillschallenge.revenue.di.revenueModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
-val generalModule = module {
+val applicationModule = module {
 
     single {
         androidContext().resources
     }
 
-    factory {
-        TabItemFactory(get())
+    single {
+        IntentFactory(get())
     }
 }
 
 val appModules = listOf(
-    generalModule
+    applicationModule,
+    homeModule,
+    revenueModule
 )
