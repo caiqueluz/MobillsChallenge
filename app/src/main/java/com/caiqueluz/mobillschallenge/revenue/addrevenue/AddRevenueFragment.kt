@@ -7,10 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.caiqueluz.mobillschallenge.CurrencyTextWatcher
-import com.caiqueluz.mobillschallenge.asValidBigDecimal
 import com.caiqueluz.mobillschallenge.databinding.FragmentAddRevenueBinding
 import com.caiqueluz.mobillschallenge.openKeyboard
-import com.caiqueluz.mobillschallenge.revenue.data.Revenue
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
@@ -40,7 +38,11 @@ class AddRevenueFragment : Fragment() {
     }
 
     private fun setupObserver() {
-        //
+        viewModel.saveRevenue.observe(viewLifecycleOwner) { result ->
+            Toast
+                .makeText(requireActivity(), "Result: $result", Toast.LENGTH_LONG)
+                .show()
+        }
     }
 
     private fun setupCurrencyValue() {
@@ -58,20 +60,17 @@ class AddRevenueFragment : Fragment() {
 
     private fun setupButton() {
         binding.button.setOnClickListener {
-            val revenue = with(binding) {
-                Revenue(
-                    value = valueEditText.text.toString().asValidBigDecimal(),
-                    description = descriptionEditText.text.toString(),
-                    date = Date(calendar.date),
-                    received = receivedCheckbox.isChecked
-                )
-            }
-
-            Toast
-                .makeText(requireActivity(), revenue.toString(), Toast.LENGTH_LONG)
-                .show()
-
-            viewModel.onButtonClicked()
+            viewModel.onAddRevenueRequested(
+                value(), description(), date(), received()
+            )
         }
     }
+
+    private fun value() = binding.valueEditText.text.toString()
+
+    private fun description() = binding.descriptionEditText.text.toString()
+
+    private fun date() = Date(binding.calendar.date)
+
+    private fun received() = binding.receivedCheckbox.isChecked
 }
