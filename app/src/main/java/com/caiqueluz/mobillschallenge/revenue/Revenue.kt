@@ -1,4 +1,4 @@
-package com.caiqueluz.mobillschallenge.transaction.data
+package com.caiqueluz.mobillschallenge.revenue
 
 import com.caiqueluz.mobillschallenge.transaction.Transaction
 import java.math.BigDecimal

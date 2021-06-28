@@ -7,7 +7,7 @@ import java.io.Serializable
 
 sealed class TransactionFlow(
     @IdRes val destination: Int,
-    val type: TransactionType
+    val transactionType: TransactionType
 ) : Serializable {
 
     class AddTransaction(type: TransactionType) : TransactionFlow(

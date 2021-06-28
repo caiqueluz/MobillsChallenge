@@ -1,16 +1,16 @@
-package com.caiqueluz.mobillschallenge.revenue.revenuedetail
+package com.caiqueluz.mobillschallenge.transaction.transactiondetail
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.caiqueluz.mobillschallenge.databinding.FragmentRevenueDetailBinding
+import com.caiqueluz.mobillschallenge.databinding.FragmentTransactionDetailBinding
 
-class RevenueDetailFragment : Fragment() {
+class TransactionDetailFragment : Fragment() {
 
     private val binding by lazy {
-        FragmentRevenueDetailBinding.inflate(layoutInflater)
+        FragmentTransactionDetailBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(

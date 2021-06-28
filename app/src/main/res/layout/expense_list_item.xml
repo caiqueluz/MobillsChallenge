@@ -9,7 +9,7 @@
     android:paddingEnd="16dp">
 
     <TextView
-        android:id="@+id/revenue_description"
+        android:id="@+id/expense_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="start"
@@ -20,36 +20,36 @@
         tools:text="Descrição" />
 
     <TextView
-        android:id="@+id/revenue_value"
+        android:id="@+id/expense_value"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/revenue_description"
+        app:layout_constraintTop_toBottomOf="@id/expense_description"
         tools:text="R$ 35,70" />
 
     <TextView
-        android:id="@+id/revenue_date"
+        android:id="@+id/expense_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/revenue_value"
+        app:layout_constraintTop_toBottomOf="@id/expense_value"
         tools:text="17 de Julho" />
 
     <TextView
-        android:id="@+id/revenue_received"
+        android:id="@+id/expense_paid"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/revenue_date"
-        tools:text="Recebida" />
+        app:layout_constraintTop_toBottomOf="@id/expense_date"
+        tools:text="Paga" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

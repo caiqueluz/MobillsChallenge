@@ -19,8 +19,6 @@ class TransactionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        setupToolbar()
-
         val transactionFlow = extra<TransactionFlow>(TRANSACTION_FLOW_KEY)
         viewModel.onFlowReceived(transactionFlow)
 
@@ -32,14 +30,6 @@ class TransactionActivity : AppCompatActivity() {
 
         binding.root.closeKeyboard()
         finish()
-    }
-
-    private fun setupToolbar() {
-        enableToolbarBackButton(binding.toolbar)
-
-        binding.toolbar.setNavigationOnClickListener {
-            finish()
-        }
     }
 
     private fun setupObserver() {

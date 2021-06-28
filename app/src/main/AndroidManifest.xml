@@ -25,7 +25,7 @@
         </activity>
 
         <activity
-            android:name=".revenue.main.RevenueActivity"
+            android:name=".transaction.main.TransactionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MobillsChallenge.NoActionBar"
             tools:ignore="LockedOrientationActivity">

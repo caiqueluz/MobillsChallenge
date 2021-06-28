@@ -20,7 +20,9 @@ class AllTransactionsFragment : Fragment() {
 
     private val viewModel by viewModel<AllTransactionsViewModel>()
 
-    private val transactionType = extra<TransactionType>(TRANSACTION_TYPE_KEY)
+    private val transactionType by lazy {
+        extra<TransactionType>(TRANSACTION_TYPE_KEY)
+    }
 
     companion object {
 

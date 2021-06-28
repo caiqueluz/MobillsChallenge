@@ -1,8 +1,10 @@
 package com.caiqueluz.mobillschallenge.transaction.alltransactions
 
-class RevenueVO(
-    val value: String,
-    val description: String,
-    val date: String,
-    val received: String
+import com.caiqueluz.mobillschallenge.transaction.main.TransactionType
+
+abstract class TransactionVO(
+    open val value: String,
+    open val description: String,
+    open val date: String,
+    open val type: TransactionType
 )

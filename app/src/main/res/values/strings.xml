@@ -4,12 +4,21 @@
     <string name="tab_item_home">Geral</string>
     <string name="tab_item_expenses">Despesas</string>
     <string name="tab_item_revenue">Receitas</string>
-    <string name="add_revenue_title">Adicionar receita</string>
+
+    <string name="add_revenue_toolbar_title">Adicionar receita</string>
+    <string name="add_expense_toolbar_title">Adicionar despesa</string>
+
     <string name="add_revenue_value_hint">Valor em R$</string>
     <string name="add_revenue_description_hint">Descrição</string>
     <string name="add_revenue_button">Adicionar</string>
+
     <string name="revenue_received_label">Já foi recebida?</string>
+    <string name="expense_paid_label">Já foi paga?</string>
 
     <string name="revenue_received_value">Recebida</string>
     <string name="revenue_not_received_value">Não recebida</string>
+
+    <string name="expense_paid_value">Paga</string>
+    <string name="expense_not_paid_value">Não paga</string>
 </resources>
+
