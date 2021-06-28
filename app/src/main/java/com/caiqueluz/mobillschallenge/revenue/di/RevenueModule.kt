@@ -12,7 +12,7 @@ import org.koin.dsl.module
 val revenueModule = module {
 
     single<RevenueRepository> {
-        DefaultRevenueRepository()
+        DefaultRevenueRepository(get())
     }
 
     factory {

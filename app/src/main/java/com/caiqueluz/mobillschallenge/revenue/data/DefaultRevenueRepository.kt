@@ -1,14 +1,21 @@
 package com.caiqueluz.mobillschallenge.revenue.data
 
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.withContext
 
-class DefaultRevenueRepository : RevenueRepository {
+class DefaultRevenueRepository(
+    private val dispatcher: CoroutineDispatcher
+) : RevenueRepository {
 
     private val cache = mutableListOf<Revenue>()
 
     override suspend fun save(revenue: Revenue): Boolean {
-        cache.add(revenue)
         delay(500L)
+
+        withContext(dispatcher) {
+            cache.add(revenue)
+        }
 
         return true
     }
@@ -16,11 +23,15 @@ class DefaultRevenueRepository : RevenueRepository {
     override suspend fun get(description: String): Revenue {
         delay(500L)
 
-        return cache.first { it.description == description }
+        return withContext(dispatcher) {
+            cache.first { it.description == description }
+        }
     }
 
     override suspend fun getAll(): List<Revenue> {
-        return cache
+        return withContext(dispatcher) {
+            cache
+        }
     }
 
     override suspend fun delete(description: String) {
@@ -30,6 +41,8 @@ class DefaultRevenueRepository : RevenueRepository {
     override suspend fun deleteAll() {
         delay(500L)
 
-        cache.clear()
+        withContext(dispatcher) {
+            cache.clear()
+        }
     }
 }
