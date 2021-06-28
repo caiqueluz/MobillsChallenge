@@ -27,9 +27,10 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/value_text_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description_text_layout"
@@ -47,8 +48,20 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <CalendarView
+        android:id="@+id/calendar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/value_text_layout"
+        app:layout_constraintVertical_bias="0.0" />
+
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/add_revenue_button"
+        android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="54dp"
         android:text="@string/add_revenue_button"
