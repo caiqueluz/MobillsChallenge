@@ -8,4 +8,5 @@
     <string name="add_revenue_value_hint">Valor em R$</string>
     <string name="add_revenue_description_hint">Descrição</string>
     <string name="add_revenue_button">Adicionar</string>
+    <string name="revenue_received_label">Já foi recebida?</string>
 </resources>

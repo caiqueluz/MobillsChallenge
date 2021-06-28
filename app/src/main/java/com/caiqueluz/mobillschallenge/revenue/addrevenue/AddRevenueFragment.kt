@@ -63,7 +63,7 @@ class AddRevenueFragment : Fragment() {
                     value = valueEditText.text.toString().asValidBigDecimal(),
                     description = descriptionEditText.text.toString(),
                     date = Date(calendar.date),
-                    received = true
+                    received = receivedCheckbox.isChecked
                 )
             }
 
