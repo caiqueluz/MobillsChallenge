@@ -7,13 +7,13 @@ import com.caiqueluz.mobillschallenge.revenue.data.RevenueRepository
 import java.util.*
 
 class AddRevenueViewModel(
-    private val revenueRepository: RevenueRepository
+    private val repository: RevenueRepository
 ) : ViewModel() {
 
     private val _saveRevenue = MutableLiveData<Revenue>()
     val saveRevenue: LiveData<Boolean> = _saveRevenue.switchMap { revenue ->
         liveData {
-            val result = revenueRepository.save(revenue)
+            val result = repository.save(revenue)
             emit(result)
         }
     }

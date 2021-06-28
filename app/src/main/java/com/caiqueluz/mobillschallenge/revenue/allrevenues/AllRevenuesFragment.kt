@@ -24,13 +24,24 @@ class AllRevenuesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupObserver()
+        setupObservers()
         setupAddButton()
     }
 
-    private fun setupObserver() {
+    override fun onStart() {
+        super.onStart()
+
+        viewModel.onStart()
+    }
+
+    private fun setupObservers() {
         viewModel.navigate.observe(viewLifecycleOwner) { intent ->
             startActivity(intent)
+        }
+
+        viewModel.revenues.observe(viewLifecycleOwner) { revenues ->
+            val adapter = AllRevenuesAdapter(context = requireActivity(), revenues)
+            binding.recyclerView.adapter = adapter
         }
     }
 

@@ -9,4 +9,7 @@
     <string name="add_revenue_description_hint">Descrição</string>
     <string name="add_revenue_button">Adicionar</string>
     <string name="revenue_received_label">Já foi recebida?</string>
+
+    <string name="revenue_received_value">Recebida</string>
+    <string name="revenue_not_received_value">Não recebida</string>
 </resources>

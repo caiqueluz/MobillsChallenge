@@ -20,8 +20,6 @@ class DefaultRevenueRepository : RevenueRepository {
     }
 
     override suspend fun getAll(): List<Revenue> {
-        delay(500L)
-
         return cache
     }
 
