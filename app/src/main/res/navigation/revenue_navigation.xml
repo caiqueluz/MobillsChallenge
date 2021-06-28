@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/revenue_navigation"
-    app:startDestination="@id/add_revenue_fragment">
+    app:startDestination="@id/add_transaction_fragment">
 
     <fragment
-        android:id="@+id/add_revenue_fragment"
-        android:name="com.caiqueluz.mobillschallenge.revenue.addrevenue.AddRevenueFragment"
-        android:label="AddRevenueFragment"
-        tools:layout="@layout/fragment_add_revenue" />
+        android:id="@+id/add_transaction_fragment"
+        android:name="com.caiqueluz.mobillschallenge.transaction.addtransaction.AddTransactionFragment"
+        android:label="AddTransactionFragment"
+        tools:layout="@layout/fragment_add_transaction" />
 
     <fragment
-        android:id="@+id/revenue_detail_fragment"
-        android:name="com.caiqueluz.mobillschallenge.revenue.revenuedetail.RevenueDetailFragment"
-        android:label="RevenueDetailFragment"
-        tools:layout="@layout/fragment_revenue_detail" />
+        android:id="@+id/transaction_detail_fragment"
+        android:name="com.caiqueluz.mobillschallenge.transaction.transactiondetail.TransactionDetailFragment"
+        android:label="TransactionDetailFragment"
+        tools:layout="@layout/fragment_transaction_detail" />
 
 </navigation>

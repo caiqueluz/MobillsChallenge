@@ -1,4 +1,4 @@
-package com.caiqueluz.mobillschallenge.revenue.allrevenues
+package com.caiqueluz.mobillschallenge.transaction.alltransactions
 
 class RevenueVO(
     val value: String,

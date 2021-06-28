@@ -2,18 +2,18 @@ package com.caiqueluz.mobillschallenge
 
 import android.content.Context
 import android.content.Intent
-import com.caiqueluz.mobillschallenge.revenue.main.RevenueActivity
-import com.caiqueluz.mobillschallenge.revenue.main.RevenueFlow
+import com.caiqueluz.mobillschallenge.transaction.main.TransactionActivity
+import com.caiqueluz.mobillschallenge.transaction.main.TransactionFlow
 
-const val REVENUE_FLOW_KEY = "REVENUE_FLOW"
+const val TRANSACTION_FLOW_KEY = "TRANSACTION_FLOW"
 
 class IntentFactory(
     private val context: Context
 ) {
 
-    fun createRevenueIntent(revenueFlow: RevenueFlow): Intent {
-        val intent = Intent(context, RevenueActivity::class.java)
-        intent.putExtra(REVENUE_FLOW_KEY, revenueFlow)
+    fun createTransactionIntent(transactionFlow: TransactionFlow): Intent {
+        val intent = Intent(context, TransactionActivity::class.java)
+        intent.putExtra(TRANSACTION_FLOW_KEY, transactionFlow)
 
         return intent
     }

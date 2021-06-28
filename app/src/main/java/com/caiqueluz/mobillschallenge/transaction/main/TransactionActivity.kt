@@ -1,18 +1,19 @@
-package com.caiqueluz.mobillschallenge.revenue.main
+package com.caiqueluz.mobillschallenge.transaction.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
 import com.caiqueluz.mobillschallenge.*
-import com.caiqueluz.mobillschallenge.databinding.ActivityRevenueBinding
+import com.caiqueluz.mobillschallenge.databinding.ActivityTransactionBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class RevenueActivity : AppCompatActivity() {
+class TransactionActivity : AppCompatActivity() {
 
     private val binding by lazy {
-        ActivityRevenueBinding.inflate(layoutInflater)
+        ActivityTransactionBinding.inflate(layoutInflater)
     }
 
-    private val viewModel by viewModel<RevenueViewModel>()
+    private val viewModel by viewModel<TransactionViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,8 +21,8 @@ class RevenueActivity : AppCompatActivity() {
 
         setupToolbar()
 
-        val flow = extra<RevenueFlow>(REVENUE_FLOW_KEY)
-        viewModel.onFlowReceived(flow)
+        val transactionFlow = extra<TransactionFlow>(TRANSACTION_FLOW_KEY)
+        viewModel.onFlowReceived(transactionFlow)
 
         setupObserver()
     }
@@ -42,9 +43,11 @@ class RevenueActivity : AppCompatActivity() {
     }
 
     private fun setupObserver() {
-        viewModel.navigate.observe(this) { destination ->
-            val navController = findFragmentViewNavController(R.id.revenue_navigation_container)
-            navController.navigate(destination)
+        viewModel.navigate.observe(this) { flow ->
+            val navController: NavController =
+                findFragmentViewNavController(R.id.transaction_navigation_container)
+
+            navController.navigate(flow.destination)
         }
     }
 }
