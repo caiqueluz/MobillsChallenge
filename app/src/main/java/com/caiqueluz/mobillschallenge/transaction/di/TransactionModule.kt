@@ -1,6 +1,7 @@
 package com.caiqueluz.mobillschallenge.transaction.di
 
 import com.caiqueluz.mobillschallenge.DateConverter
+import com.caiqueluz.mobillschallenge.DialogFactory
 import com.caiqueluz.mobillschallenge.transaction.addtransaction.AddTransactionViewModel
 import com.caiqueluz.mobillschallenge.transaction.addtransaction.TransactionFactory
 import com.caiqueluz.mobillschallenge.transaction.alltransactions.AllTransactionsConverter
@@ -27,6 +28,10 @@ val transactionModule = module {
 
     factory {
         TransactionFactory()
+    }
+
+    factory {
+        DialogFactory(get())
     }
 
     viewModel {

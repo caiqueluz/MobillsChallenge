@@ -19,6 +19,9 @@ class AddTransactionViewModel(
         }
     }
 
+    private val _invalidDescription = MutableLiveData<Unit>()
+    val invalidDescription: LiveData<Unit> = _invalidDescription
+
     fun onAddTransactionRequested(
         type: TransactionType,
         value: String,
@@ -26,6 +29,9 @@ class AddTransactionViewModel(
         date: Date,
         status: Boolean
     ) {
+        val isDescriptionValid = validateDescription(description)
+        if (isDescriptionValid) return
+
         val transaction = when (type) {
             TransactionType.REVENUE -> factory.createRevenueTransaction(
                 value, description, date, status
@@ -38,4 +44,12 @@ class AddTransactionViewModel(
 
         _addTransaction.postValue(transaction)
     }
+
+    private fun validateDescription(description: String): Boolean =
+        if (description.isBlank() || description.isEmpty()) {
+            _invalidDescription.postValue(Unit)
+            true
+        } else {
+            false
+        }
 }

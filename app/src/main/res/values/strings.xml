@@ -20,8 +20,13 @@
 
     <string name="expense_paid_value">Paga</string>
     <string name="expense_not_paid_value">Não paga</string>
-    <string name="add_transaction_success_dialog_title">Transação adicionada</string>
-    <string name="add_transaction_success_dialog_message">Transação adicionada com sucesso!</string>
-    <string name="add_transaction_success_dialog_positive_button">Voltar</string>
-</resources>
 
+    <string name="add_transaction_success_dialog_title">%s adicionada</string>
+    <string name="add_transaction_success_dialog_message">%s adicionada com sucesso!</string>
+    <string name="add_transaction_success_dialog_positive_button">Voltar</string>
+
+    <string name="add_transaction_success_dialog_expense_label">Despesa</string>
+    <string name="add_transaction_success_dialog_revenue_label">Receita</string>
+    <string name="invalid_description_dialog_title">Descrição invalida</string>
+    <string name="invalid_description_dialog_message">Descrição inválida. Digite novamente a descrição.</string>
+</resources>
