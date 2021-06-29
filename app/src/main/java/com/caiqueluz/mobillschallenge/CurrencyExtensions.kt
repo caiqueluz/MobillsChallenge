@@ -15,10 +15,14 @@ fun CurrencyTextWatcher(): TextWatcher =
 fun String.asValidBigDecimal(): BigDecimal {
     val value = if (this.isBlank() || this.isEmpty()) DEFAULT_VALUE.toString() else this
 
-    val double =
-        FormatadorValor.VALOR
-            .desformata(value)
-            .toDouble()
+    val double: Double =
+        try {
+            FormatadorValor.VALOR
+                .desformata(value)
+                .toDouble()
+        } catch (exception: Exception) {
+            0.0
+        }
 
     return double.toBigDecimal()
 }
