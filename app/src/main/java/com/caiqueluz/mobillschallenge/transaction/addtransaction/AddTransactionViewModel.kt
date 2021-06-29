@@ -1,14 +1,14 @@
 package com.caiqueluz.mobillschallenge.transaction.addtransaction
 
 import androidx.lifecycle.*
-import com.caiqueluz.mobillschallenge.asValidBigDecimal
-import com.caiqueluz.mobillschallenge.revenue.Revenue
 import com.caiqueluz.mobillschallenge.transaction.Transaction
 import com.caiqueluz.mobillschallenge.transaction.data.TransactionRepository
+import com.caiqueluz.mobillschallenge.transaction.main.TransactionType
 import java.util.*
 
 class AddTransactionViewModel(
-    private val repository: TransactionRepository
+    private val repository: TransactionRepository,
+    private val factory: TransactionFactory
 ) : ViewModel() {
 
     private val _addTransaction = MutableLiveData<Transaction>()
@@ -20,12 +20,22 @@ class AddTransactionViewModel(
     }
 
     fun onAddTransactionRequested(
+        type: TransactionType,
         value: String,
         description: String,
         date: Date,
-        received: Boolean
+        status: Boolean
     ) {
-        val revenue = Revenue(value.asValidBigDecimal(), description, date, received)
-        _addTransaction.postValue(revenue)
+        val transaction = when (type) {
+            TransactionType.REVENUE -> factory.createRevenueTransaction(
+                value, description, date, status
+            )
+
+            TransactionType.EXPENSE -> factory.createExpenseTransaction(
+                value, description, date, status
+            )
+        }
+
+        _addTransaction.postValue(transaction)
     }
 }

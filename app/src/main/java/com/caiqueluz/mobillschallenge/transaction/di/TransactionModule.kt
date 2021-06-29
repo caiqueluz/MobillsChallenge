@@ -1,6 +1,7 @@
 package com.caiqueluz.mobillschallenge.transaction.di
 
 import com.caiqueluz.mobillschallenge.transaction.addtransaction.AddTransactionViewModel
+import com.caiqueluz.mobillschallenge.transaction.addtransaction.TransactionFactory
 import com.caiqueluz.mobillschallenge.transaction.alltransactions.AllTransactionsConverter
 import com.caiqueluz.mobillschallenge.transaction.alltransactions.AllTransactionsViewModel
 import com.caiqueluz.mobillschallenge.transaction.data.DefaultTransactionRepository
@@ -19,6 +20,10 @@ val transactionModule = module {
         AllTransactionsConverter(get())
     }
 
+    factory {
+        TransactionFactory()
+    }
+
     viewModel {
         TransactionViewModel()
     }
@@ -28,6 +33,6 @@ val transactionModule = module {
     }
 
     viewModel {
-        AddTransactionViewModel(get())
+        AddTransactionViewModel(get(), get())
     }
 }

@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.caiqueluz.mobillschallenge.*
 import com.caiqueluz.mobillschallenge.databinding.FragmentAddTransactionBinding
@@ -67,11 +67,22 @@ class AddTransactionFragment : Fragment() {
     }
 
     private fun setupObserver() {
-        viewModel.addTransaction.observe(viewLifecycleOwner) { result ->
-            Toast
-                .makeText(requireActivity(), "Result: $result", Toast.LENGTH_LONG)
-                .show()
+        viewModel.addTransaction.observe(viewLifecycleOwner) {
+            showSuccessDialog()
         }
+    }
+
+    private fun showSuccessDialog() {
+        val dialog = AlertDialog.Builder(requireActivity())
+            .setTitle(getString(R.string.add_transaction_success_dialog_title))
+            .setMessage(getString(R.string.add_transaction_success_dialog_message))
+            .setCancelable(false)
+            .setPositiveButton(getString(R.string.add_transaction_success_dialog_positive_button)) { _, _ ->
+                requireActivity().finish()
+            }
+            .create()
+
+        dialog.show()
     }
 
     private fun setupCurrencyValue() {
@@ -102,7 +113,11 @@ class AddTransactionFragment : Fragment() {
     private fun setupButton() {
         binding.button.setOnClickListener {
             viewModel.onAddTransactionRequested(
-                value(), description(), date(), statusCheckboxValue()
+                transactionType,
+                value(),
+                description(),
+                date(),
+                statusCheckboxValue()
             )
         }
     }

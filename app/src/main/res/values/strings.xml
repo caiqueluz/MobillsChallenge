@@ -20,5 +20,8 @@
 
     <string name="expense_paid_value">Paga</string>
     <string name="expense_not_paid_value">Não paga</string>
+    <string name="add_transaction_success_dialog_title">Transação adicionada</string>
+    <string name="add_transaction_success_dialog_message">Transação adicionada com sucesso!</string>
+    <string name="add_transaction_success_dialog_positive_button">Voltar</string>
 </resources>
 
