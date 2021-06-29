@@ -1,6 +1,8 @@
 package com.caiqueluz.mobillschallenge.transaction.alltransactions
 
 import android.content.res.Resources
+import br.com.concrete.canarinho.formatador.FormatadorValor
+import com.caiqueluz.mobillschallenge.DateConverter
 import com.caiqueluz.mobillschallenge.R
 import com.caiqueluz.mobillschallenge.expense.Expense
 import com.caiqueluz.mobillschallenge.expense.ExpenseVO
@@ -13,7 +15,8 @@ import com.caiqueluz.mobillschallenge.transaction.main.TransactionType.REVENUE
 
 @Suppress("UNCHECKED_CAST")
 class AllTransactionsConverter(
-    private val resources: Resources
+    private val resources: Resources,
+    private val dateConverter: DateConverter
 ) {
 
     fun convert(transactions: List<Transaction>): List<TransactionVO> =
@@ -24,20 +27,28 @@ class AllTransactionsConverter(
 
     private fun convertRevenues(revenues: List<Revenue>): List<RevenueVO> =
         revenues.map { revenue ->
+            val value: String =
+                FormatadorValor.VALOR_COM_SIMBOLO
+                    .formata(revenue.value.toString())
+
             RevenueVO(
-                value = revenue.value.toString(),
+                value = value,
                 description = revenue.description,
-                date = revenue.date.toString(),
+                date = dateConverter.convert(revenue.date),
                 received = getReceivedValue(revenue)
             )
         }
 
     private fun convertExpenses(expenses: List<Expense>): List<ExpenseVO> =
         expenses.map { expense ->
+            val value: String =
+                FormatadorValor.VALOR_COM_SIMBOLO
+                    .formata(expense.value.toString())
+
             ExpenseVO(
-                value = expense.value.toString(),
+                value = value,
                 description = expense.description,
-                date = expense.date.toString(),
+                date = dateConverter.convert(expense.date),
                 paid = getPaidValue(expense)
             )
         }
