@@ -10,15 +10,9 @@ class TabItemFactory(
 ) {
 
     fun createItems(): List<TabItemVO> = listOf(
-        createHomeTabItem(),
         createExpensesTabItem(),
         createRevenuesTabItem()
     )
-
-    private fun createHomeTabItem(): TabItemVO =
-        TabItemVO(
-            resources.getString(R.string.tab_item_home), HomeFragment()
-        )
 
     private fun createExpensesTabItem(): TabItemVO =
         TabItemVO(
