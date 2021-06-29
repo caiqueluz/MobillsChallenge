@@ -23,9 +23,9 @@ class TransactionViewModelTest : ConcurrentTest() {
         val observer = mock<Observer<TransactionFlow>>()
         viewModel.navigate.observeForever(observer)
 
-        val mockFlow = mock<TransactionFlow>()
-        viewModel.onFlowReceived(mockFlow)
+        val expected = mock<TransactionFlow>()
+        viewModel.onFlowReceived(expected)
 
-        verify(observer).onChanged(eq(mockFlow))
+        verify(observer).onChanged(eq(expected))
     }
 }
