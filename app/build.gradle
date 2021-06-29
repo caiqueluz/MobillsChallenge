@@ -103,6 +103,7 @@ dependencies {
     androidTestImplementation Dependencies.Test.MOCKITO_KOTLIN
     androidTestImplementation Dependencies.Test.ANDROID_TEST_RUNNER
     androidTestImplementation Dependencies.Test.ARCH_CORE_TESTING
+    androidTestImplementation Dependencies.Test.COROUTINES_TEST
 
     debugImplementation(Dependencies.Test.FRAGMENT_TESTING) {
         exclude group: 'androidx.test', module: 'core'
