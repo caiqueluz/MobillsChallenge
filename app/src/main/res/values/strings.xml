@@ -27,6 +27,6 @@
 
     <string name="add_transaction_success_dialog_expense_label">Despesa</string>
     <string name="add_transaction_success_dialog_revenue_label">Receita</string>
-    <string name="invalid_description_dialog_title">Descrição invalida</string>
+    <string name="invalid_description_dialog_title">Descrição inválida</string>
     <string name="invalid_description_dialog_message">Descrição inválida. Digite novamente a descrição.</string>
 </resources>
