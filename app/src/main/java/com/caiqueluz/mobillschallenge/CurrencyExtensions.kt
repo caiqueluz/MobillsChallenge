@@ -5,16 +5,20 @@ import br.com.concrete.canarinho.formatador.FormatadorValor
 import br.com.concrete.canarinho.watcher.ValorMonetarioWatcher
 import java.math.BigDecimal
 
+private const val DEFAULT_VALUE = 0.0
+
 fun CurrencyTextWatcher(): TextWatcher =
     ValorMonetarioWatcher.Builder()
         .comMantemZerosAoLimpar()
         .build()
 
 fun String.asValidBigDecimal(): BigDecimal {
+    val value = if (this.isBlank() || this.isEmpty()) DEFAULT_VALUE.toString() else this
+
     val double: Double =
         FormatadorValor.VALOR
-            .desformata(this)
-            .toDoubleOrNull() ?: 0.0
+            .desformata(value)
+            .toDouble()
 
     return double.toBigDecimal()
 }
