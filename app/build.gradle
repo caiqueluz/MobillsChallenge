@@ -80,7 +80,7 @@ dependencies {
     implementation Dependencies.Library.KOIN_VIEW_MODEL
     implementation Dependencies.Library.KOIN_FRAGMENT
 
-    implementation "br.com.concrete:canarinho:2.0.0"
+    implementation Dependencies.Library.Android.CANARINHO
 
     testImplementation Dependencies.Test.JUNIT
     testImplementation Dependencies.Test.EXT_JUNIT

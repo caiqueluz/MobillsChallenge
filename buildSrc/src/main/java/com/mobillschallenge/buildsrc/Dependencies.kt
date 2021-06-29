@@ -34,6 +34,8 @@ object Dependencies {
             const val CONSTRAINT_LAYOUT =
                 "androidx.constraintlayout:constraintlayout:${Versions.Library.Android.CONSTRAINT_LAYOUT}"
             const val VIEW_PAGER_2 = "androidx.viewpager2:viewpager2:${Versions.Library.Android.VIEW_PAGER_2}"
+
+            const val CANARINHO = "br.com.concrete:canarinho:${Versions.Library.Android.CANARINHO}"
         }
 
         const val KOIN_GRADLE_PLUGIN = "org.koin:koin-gradle-plugin:${Versions.Library.KOIN}"

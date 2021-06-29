@@ -22,6 +22,8 @@ object Versions {
             const val APP_COMPAT = "1.2.0"
             const val CONSTRAINT_LAYOUT = "2.0.4"
             const val VIEW_PAGER_2 = "1.0.0"
+
+            const val CANARINHO = "2.0.0"
         }
 
         const val KOIN = "2.2.2"
